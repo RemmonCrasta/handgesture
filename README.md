@@ -1,45 +1,53 @@
-# Gesture-Controlled-Virtual-Mouse
+# Hand Gesture Control System
 
-### AI Virtual Mouse controlled by gesture using OpenCV and Mediapipe with Python.
+A real-time computer control and drawing system using hand gestures.
 
-    1- Hand and finger tracking.
-    
-    2- Options and features with the tracked fingers.
-    
-You can either use your computer's cam, or an external one such as ESP-CAM.
+## Features
 
- In this example we have four options: Single click, double click, right click, press/release, which are of course customisable.
- 
- ***Single click:*** Thumb (tip) with index (pip) fingers.
- 
- ***Double click:*** Index (tip) with middle (tip) fingers.
- 
- ***Right click:*** Middle (tip) with ring (tip) fingers.
- 
- ***Press:*** Thumb (tip) with index (tip) fingers.
- 
- _ _ _ 
- 
-#### We avoided using autopy since it doesn't run on all Python versions **(Python 2.7, or Python 3.5 til 3.8)** which makes it limited so the required libraries are:
- 
+- Hand gesture based mouse control
+- Left click
+- Right click
+- Double click
+- Screen cursor movement
+- Drawing mode
+- Dynamic background-adaptive drawing color
+- Local area eraser
+- Lock/unlock system
+- Webcam based real-time hand tracking
+- Video recording
 
-    1- OpenCV Python
-    
-    2- Numpy & Math
-    
-    3- Mediapipe
-    
-    4- Mouse
-    
-    5- Time
-    
-Please, check this documentation if you have never worked with Mediapipe: https://google.github.io/mediapipe/solutions/hands
+## Technologies Used
 
-Python Object Oriented Programming course: https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc
+- Python
+- OpenCV
+- MediaPipe
+- NumPy
+- PyAutoGUI / Mouse Control
+- Webcam
 
-Numpy tuto for beginners : https://www.youtube.com/watch?v=QUT1VHiLmmI
+## How It Works
 
-![My Image](HandLandmarks.png)
+The system uses MediaPipe to detect hand landmarks through the webcam. Different hand gestures are interpreted as mouse actions or drawing commands.
 
+### Mouse Mode
 
+| Gesture | Action |
+|---|---|
+| Thumb + Index | Left Click |
+| Index + Middle | Right Click |
+| Thumb touching Index/Middle area | Double Click |
+| Fist | Lock |
 
+### Drawing Mode
+
+| Gesture | Action |
+|---|---|
+| Index finger | Draw |
+| Index + Middle | Pen Up |
+| Open Palm | Erase |
+| Fist | Does not lock |
+
+## Installation
+
+```bash
+pip install opencv-python mediapipe numpy mouse
